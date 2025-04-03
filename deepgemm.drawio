@@ -82,6 +82,9 @@
         <mxCell id="e20dCup7h8Shn3l8CifW-27" value="m_id = 4" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="260" y="565" width="70" height="30" as="geometry" />
         </mxCell>
+        <mxCell id="e20dCup7h8Shn3l8CifW-28" value="原来的情形" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="130" y="358" width="80" height="30" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
