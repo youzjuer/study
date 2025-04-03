@@ -40,6 +40,9 @@
         <mxCell id="e20dCup7h8Shn3l8CifW-13" value="129" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="110" y="560" width="40" height="30" as="geometry" />
         </mxCell>
+        <mxCell id="e20dCup7h8Shn3l8CifW-14" value="g_id = 0" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="60" y="408" width="70" height="30" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
