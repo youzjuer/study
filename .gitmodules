@@ -1,0 +1,3 @@
+[submodule "group_gemm/third-party/cutlass"]
+	path = group_gemm/third-party/cutlass
+	url = https://github.com/NVIDIA/cutlass.git
