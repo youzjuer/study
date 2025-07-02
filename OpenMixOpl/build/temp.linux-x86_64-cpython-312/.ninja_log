@@ -1,0 +1,14 @@
+# ninja log v5
+2	60158	1751425798102740495	/mnt/workspace/ycb/git_test/bbyDemo/group_gemm/build/temp.linux-x86_64-cpython-312/csrc/ops.o	82d0fda8b701b350
+1	105849	1751425843768624288	/mnt/workspace/ycb/git_test/bbyDemo/group_gemm/build/temp.linux-x86_64-cpython-312/csrc/group_gemm.o	14a0c54c8eb20273
+244	73793	1751435499291900307	/mnt/workspace/ycb/git_test/bbyDemo/group_gemm/build/temp.linux-x86_64-cpython-312/csrc/cutlass_gemm.o	2dc5f9c0cd1322b
+244	105346	1751435530829758616	/mnt/workspace/ycb/git_test/bbyDemo/group_gemm/build/temp.linux-x86_64-cpython-312/csrc/group_gemm.o	14a0c54c8eb20273
+229	60830	1751435703805870298	/mnt/workspace/ycb/git_test/bbyDemo/group_gemm/build/temp.linux-x86_64-cpython-312/csrc/ops.o	82d0fda8b701b350
+234	59694	1751436116361637900	/mnt/workspace/ycb/git_test/bbyDemo/group_gemm/build/temp.linux-x86_64-cpython-312/csrc/ops.o	82d0fda8b701b350
+239	76940	1751436544790174300	/mnt/workspace/ycb/git_test/bbyDemo/group_gemm/build/temp.linux-x86_64-cpython-312/csrc/ops.o	82d0fda8b701b350
+259	62537	1751436692242493873	/mnt/workspace/ycb/git_test/bbyDemo/group_gemm/build/temp.linux-x86_64-cpython-312/csrc/ops.o	82d0fda8b701b350
+238	64396	1751436840885470714	/mnt/workspace/ycb/git_test/bbyDemo/group_gemm/build/temp.linux-x86_64-cpython-312/csrc/ops.o	82d0fda8b701b350
+236	60030	1751437302017833109	/mnt/workspace/ycb/git_test/bbyDemo/group_gemm/build/temp.linux-x86_64-cpython-312/csrc/ops.o	82d0fda8b701b350
+7	60845	1751437943924468637	/mnt/workspace/ycb/git_test/bbyDemo/OpenMixOpl/build/temp.linux-x86_64-cpython-312/csrc/ops.o	f99eaed2761e9560
+7	74134	1751437957212939931	/mnt/workspace/ycb/git_test/bbyDemo/OpenMixOpl/build/temp.linux-x86_64-cpython-312/csrc/cutlass_gemm.o	742edc3d82b1b627
+7	106736	1751437989800102043	/mnt/workspace/ycb/git_test/bbyDemo/OpenMixOpl/build/temp.linux-x86_64-cpython-312/csrc/group_gemm.o	9f2a1857c824ec9c

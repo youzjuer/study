@@ -1,0 +1,18 @@
+CUTLASS_DIR=/mnt/workspace/ycb/git_test/OpenMixOpl/OpenMixOpl/Z2000/third-party/cutlass COMPILE_3X_HOPPER=1 pip3 install cutlass_gemm/
+Looking in indexes: https://mirrors.cloud.aliyuncs.com/pypi/simple/
+Processing ./cutlass_gemm
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Building wheels for collected packages: cutlass_gemm
+  Building wheel for cutlass_gemm (setup.py): started
+  Building wheel for cutlass_gemm (setup.py): still running...
+  Building wheel for cutlass_gemm (setup.py): finished with status 'done'
+  Created wheel for cutlass_gemm: filename=cutlass_gemm-0.0.0-cp312-cp312-linux_x86_64.whl size=113601 sha256=0d8112648ec8d83141149a97e2546c9a7c16cc4f6b3f3a78c2e12d4c0d50f159
+  Stored in directory: /tmp/pip-ephem-wheel-cache-vyr1yf5q/wheels/80/08/62/1aba8a04db49faf071735f1f82ee9a021773e6ac94a034ed9d
+Successfully built cutlass_gemm
+Installing collected packages: cutlass_gemm
+  Attempting uninstall: cutlass_gemm
+    Found existing installation: cutlass_gemm 0.0.0
+    Uninstalling cutlass_gemm-0.0.0:
+      Successfully uninstalled cutlass_gemm-0.0.0
+Successfully installed cutlass_gemm-0.0.0
