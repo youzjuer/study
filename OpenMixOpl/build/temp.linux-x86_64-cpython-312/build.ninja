@@ -2,11 +2,12 @@ ninja_required_version = 1.3
 cxx = c++
 nvcc = /usr/local/cuda/bin/nvcc
 
-cflags = -fno-strict-overflow -fno-strict-aliasing -DNDEBUG -g -O3 -Wall -O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -march=x86-64-v2 -O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -march=x86-64-v2 -fPIC -I/mnt/workspace/ycb/git_test/bbyDemo/OpenMixOpl/third-party/cutlass/include/ -I/mnt/workspace/ycb/git_test/bbyDemo/OpenMixOpl/third-party/cutlass/tools/util/include/ -I/opt/ac2/lib/python3.12/site-packages/torch/include -I/opt/ac2/lib/python3.12/site-packages/torch/include/torch/csrc/api/include -I/opt/ac2/lib/python3.12/site-packages/torch/include/TH -I/opt/ac2/lib/python3.12/site-packages/torch/include/THC -I/usr/local/cuda/include -I/opt/ac2/include/python3.12 -c
-post_cflags = -fopenmp -fPIC -Wno-strict-aliasing -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1018"' -DTORCH_EXTENSION_NAME=omo -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++17
-cuda_cflags = -I/mnt/workspace/ycb/git_test/bbyDemo/OpenMixOpl/third-party/cutlass/include/ -I/mnt/workspace/ycb/git_test/bbyDemo/OpenMixOpl/third-party/cutlass/tools/util/include/ -I/opt/ac2/lib/python3.12/site-packages/torch/include -I/opt/ac2/lib/python3.12/site-packages/torch/include/torch/csrc/api/include -I/opt/ac2/lib/python3.12/site-packages/torch/include/TH -I/opt/ac2/lib/python3.12/site-packages/torch/include/THC -I/usr/local/cuda/include -I/opt/ac2/include/python3.12 -c
-cuda_post_cflags = -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options ''"'"'-fPIC'"'"'' -std=c++17 -DENABLE_BF16 -DENABLE_FP8 --generate-code=arch=compute_90,code=sm_90 -DGROUPED_GEMM_DEVICE_CAPABILITY=90 -arch=sm_90a -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1018"' -DTORCH_EXTENSION_NAME=omo -D_GLIBCXX_USE_CXX11_ABI=1
+cflags = -fno-strict-overflow -fno-strict-aliasing -DNDEBUG -g -O3 -Wall -O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -march=x86-64-v2 -O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -march=x86-64-v2 -fPIC -I/mnt/workspace/ycb/git_test/bbyDemo/OpenMixOpl/third-party/cutlass/include/ -I/mnt/workspace/ycb/git_test/bbyDemo/OpenMixOpl/third-party/cutlass/tools/util/include/ -I/opt/ac2/lib/python3.12/site-packages/torch/include -I/opt/ac2/lib/python3.12/site-packages/torch/include/torch/csrc/api/include -I/usr/local/cuda/include -I/opt/ac2/include/python3.12 -c
+post_cflags = -fopenmp -fPIC -Wno-strict-aliasing -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1016"' -DTORCH_EXTENSION_NAME=omo -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++17
+cuda_cflags = -I/mnt/workspace/ycb/git_test/bbyDemo/OpenMixOpl/third-party/cutlass/include/ -I/mnt/workspace/ycb/git_test/bbyDemo/OpenMixOpl/third-party/cutlass/tools/util/include/ -I/opt/ac2/lib/python3.12/site-packages/torch/include -I/opt/ac2/lib/python3.12/site-packages/torch/include/torch/csrc/api/include -I/usr/local/cuda/include -I/opt/ac2/include/python3.12 -c
+cuda_post_cflags = -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options ''"'"'-fPIC'"'"'' -std=c++17 -DENABLE_BF16 -DENABLE_FP8 --generate-code=arch=compute_90,code=sm_90 -DGROUPED_GEMM_DEVICE_CAPABILITY=90 -arch=sm_90a -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1016"' -DTORCH_EXTENSION_NAME=omo -D_GLIBCXX_USE_CXX11_ABI=1
 cuda_dlink_post_cflags = 
+sycl_dlink_post_cflags = 
 ldflags = 
 
 rule compile
@@ -23,9 +24,14 @@ rule cuda_compile
 
 
 
+
+
 build /mnt/workspace/ycb/git_test/bbyDemo/OpenMixOpl/build/temp.linux-x86_64-cpython-312/csrc/cutlass_gemm.o: cuda_compile /mnt/workspace/ycb/git_test/bbyDemo/OpenMixOpl/csrc/cutlass_gemm.cu
+build /mnt/workspace/ycb/git_test/bbyDemo/OpenMixOpl/build/temp.linux-x86_64-cpython-312/csrc/fp8_blockwise_moe_kernel.o: cuda_compile /mnt/workspace/ycb/git_test/bbyDemo/OpenMixOpl/csrc/fp8_blockwise_moe_kernel.cu
 build /mnt/workspace/ycb/git_test/bbyDemo/OpenMixOpl/build/temp.linux-x86_64-cpython-312/csrc/group_gemm.o: cuda_compile /mnt/workspace/ycb/git_test/bbyDemo/OpenMixOpl/csrc/group_gemm.cu
 build /mnt/workspace/ycb/git_test/bbyDemo/OpenMixOpl/build/temp.linux-x86_64-cpython-312/csrc/ops.o: cuda_compile /mnt/workspace/ycb/git_test/bbyDemo/OpenMixOpl/csrc/ops.cu
+
+
 
 
 

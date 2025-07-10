@@ -2,7 +2,7 @@
 #include <torch/extension.h>
 #include <torch/types.h>
 
-namespace group_gemm {
+namespace omo {
 
 void Gemm(	const std::vector<torch::Tensor>& a,
 	const std::vector<torch::Tensor>& a_s,
@@ -14,7 +14,4 @@ void Gemm(	const std::vector<torch::Tensor>& a,
 	int beta,
 	int batch_sizes,
 	const std::vector< std::vector<int>> group_info);
-
-
-
 }  // namespace group_gemm

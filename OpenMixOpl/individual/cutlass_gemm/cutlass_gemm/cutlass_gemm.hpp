@@ -109,6 +109,7 @@ template<typename DataType, typename OutputType> void cutlass_gemm_wrapper(int M
   using ArchTag             = cutlass::arch::Sm90;                            // Tag indicating the minimum SM that supports the intended feature
   using OperatorClass       = cutlass::arch::OpClassTensorOp;                 // Operator class tag
   using TilesShape          = Shape<_128,_128,_64>;                           // Threadblock-level tile size
+  // using TilesShape          = Shape<_256,_256,_256>;                           // Threadblock-level tile size
   using ClusterShape        = Shape<_1,_2,_1>;                                // Shape of the threadblocks in a cluster
   using StageCountType = cutlass::gemm::collective::StageCountAuto;           // Stage count maximized based on the tile size
   using KernelSchedule = cutlass::gemm::collective::KernelScheduleAuto;       // Kernel to launch based on the default setting in the Collective Builder 

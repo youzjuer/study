@@ -23,7 +23,7 @@ rule cuda_compile
 
 
 
-build /mnt/workspace/ycb/git_test/bbyDemo/cfx-article-src/cutlass_gemm/cutlass_gemm/build/temp.linux-x86_64-cpython-312/cutlass_gemm.o: cuda_compile /mnt/workspace/ycb/git_test/bbyDemo/cfx-article-src/cutlass_gemm/cutlass_gemm/cutlass_gemm.cu
+build /mnt/workspace/ycb/git_test/bbyDemo/OpenMixOpl/individual/cutlass_gemm/cutlass_gemm/build/temp.linux-x86_64-cpython-312/cutlass_gemm.o: cuda_compile /mnt/workspace/ycb/git_test/bbyDemo/OpenMixOpl/individual/cutlass_gemm/cutlass_gemm/cutlass_gemm.cu
 
 
 

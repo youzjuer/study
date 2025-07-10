@@ -249,7 +249,7 @@ void allocate(const std::vector<torch::Tensor>& a,
     auto M = group_info[i][0];
     auto N = group_info[i][1];
     auto K = group_info[i][2];
-    printf("mnk=%d,%d,%d\n",M,N,K);
+    // printf("mnk=%d,%d,%d\n",M,N,K);
 
     if (M < 1) {
       M = m_alignment * ((rand() % (64 * alignment / m_alignment)) + 1);
@@ -339,7 +339,7 @@ void initialize(const std::vector<torch::Tensor>& a,
   // std::vector<torch::Tensor> d_cpu_tensors(batch_sizes);
   // std::vector<torch::Tensor> a_s_cpu_tensors(batch_sizes);
   // std::vector<torch::Tensor> b_s_cpu_tensors(batch_sizes);
-  printf("batch_sizes = %d\n",batch_sizes);
+  // printf("batch_sizes = %d\n",batch_sizes);
   for (int i = 0; i < batch_sizes; i++) {
     // 得到hbm的内存指针,赋值, 
     // a_cpu_tensors[i] = a[i].cpu();

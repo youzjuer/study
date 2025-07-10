@@ -97,7 +97,8 @@ template<typename DataType, typename OutputType> void cutlass_gemm_wrapper(int M
   constexpr int AlignmentA  = 128 / cutlass::sizeof_bits<DataType>::value;    // Memory access granularity/alignment of A matrix in units of elements (up to 16 bytes)
 
   // B matrix configuration
-  using         LayoutB     = cutlass::layout::RowMajor;                   // Layout type for B matrix operand
+  // using         LayoutB     = cutlass::layout::RowMajor;                   // Layout type for B matrix operand
+  using         LayoutB     = cutlass::layout::ColumnMajor;                   // Layout type for B matrix operand
   constexpr int AlignmentB  = 128 / cutlass::sizeof_bits<DataType>::value;    // Memory access granularity/alignment of B matrix in units of elements (up to 16 bytes)
 
   // C/D matrix configuration

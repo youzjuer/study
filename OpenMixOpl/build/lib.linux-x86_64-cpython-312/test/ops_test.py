@@ -195,10 +195,10 @@ def test_m_grouped_gemm_contiguous_list() -> None:
         # case_list = get_case_list_json()
         case_list = []
         # case_list.append(([(1280, 1024), (1280, 1024), (1280, 1024)], [(2080, 1024), (1819, 1024), (3106, 1024)]))
-        case_list.append(([(128, 256),(256,512)], [(128, 256),(256,512)]))
+        # case_list.append(([(128, 256),(256,512)], [(128, 256),(256,512)]))
         # case_list.append(([(1280, 10240),], [(1280, 10240),]))
         # case_list.append(([(2816, 16384),(2816, 16384)], [(3072, 16384),(3072, 16384)]))
-        # case_list.append(([(1280, 1024),(512, 5120),(512, 256),(512, 256)], [(1280, 1024),(256, 5120),(512, 256),(512, 256)]))
+        case_list.append(([(1280, 1024),(512, 5120),(512, 256),(512, 256)], [(1280, 1024),(256, 5120),(512, 256),(512, 256)]))
         # case_list.append(([(1280, 10240)], [(2560, 10240)]))
         print(f"case_list:{case_list}")
         # case_list.append(([(1280, 1901), (1280, 1901), (1280, 1901)], [(2080, 1901), (1819, 1901), (3106, 1901)]))
@@ -302,13 +302,13 @@ def test_m_grouped_gemm_contiguous_list() -> None:
                     # diff = calc_diff(out_list[i][:,:n//2], ref_out_list[i][:,:n//2])
                     # diff = calc_diff(out_list[i][:m//2,:], ref_out_list[i][:m//2,:])
                     assert diff < 0.001, f'{case_idx=}, {i=}, {diff:.5f}'
-                print("diff pass!!!")
+                # print("diff pass!!!")
                 # performance
-                # quantiles = [0.5, 0.2, 0.8]
-                # t_ms, _, _ = triton.testing.do_bench(lambda:gemm.gmm(x_fp8_inp_list, y_fp8_inp_list, x_fp8_scale_list, y_fp8_scale_list,C_list, out_list,alpha,beta,num_groups,group_info), quantiles=quantiles)
-                # t = t_ms / 1000.0   
-                # print(f' > Performance ({case_idx=}: {t * 1e6:4.0f} us | '
-                #     f'throughput: {ops / t_ms / 1e9:4.0f} TFLOPS, ')
+                quantiles = [0.5, 0.2, 0.8]
+                t_ms, _, _ = triton.testing.do_bench(lambda:gemm.gmm(x_fp8_inp_list, y_fp8_inp_list, x_fp8_scale_list, y_fp8_scale_list,C_list, out_list,alpha,beta,num_groups,group_info), quantiles=quantiles)
+                t = t_ms / 1000.0   
+                print(f' > Performance ({case_idx=}: {t * 1e6:4.0f} us | '
+                    f'throughput: {ops / t_ms / 1e9:4.0f} TFLOPS, ')
 
             case_idx += 1
         print()

@@ -1,6 +1,2 @@
 # ninja log v5
-1	80948	1751361155783508274	/mnt/workspace/ycb/git_test/bbyDemo/cfx-article-src/cutlass_gemm/cutlass_gemm/build/temp.linux-x86_64-cpython-312/cutlass_gemm.o	11712484e71be38e
-213	81319	1751423440887806150	/mnt/workspace/ycb/git_test/bbyDemo/cfx-article-src/cutlass_gemm/cutlass_gemm/build/temp.linux-x86_64-cpython-312/cutlass_gemm.o	11712484e71be38e
-119	80822	1751423564306467475	/mnt/workspace/ycb/git_test/bbyDemo/cfx-article-src/cutlass_gemm/cutlass_gemm/build/temp.linux-x86_64-cpython-312/cutlass_gemm.o	11712484e71be38e
-122	81295	1751423705625558241	/mnt/workspace/ycb/git_test/bbyDemo/cfx-article-src/cutlass_gemm/cutlass_gemm/build/temp.linux-x86_64-cpython-312/cutlass_gemm.o	11712484e71be38e
-130	79995	1751424756705885408	/mnt/workspace/ycb/git_test/bbyDemo/cfx-article-src/cutlass_gemm/cutlass_gemm/build/temp.linux-x86_64-cpython-312/cutlass_gemm.o	11712484e71be38e
+2	81201	1751512424882445629	/mnt/workspace/ycb/git_test/bbyDemo/OpenMixOpl/individual/cutlass_gemm/cutlass_gemm/build/temp.linux-x86_64-cpython-312/cutlass_gemm.o	9e5673d59f2de3e8

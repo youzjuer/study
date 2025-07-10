@@ -50,7 +50,8 @@ ext_modules = [
         # "grouped_gemm_backend",
         "omo",
         # ["csrc/ops.cu", "csrc/group_gemm.cu","csrc/gemm.cu"],
-        ["csrc/ops.cu", "csrc/group_gemm.cu","csrc/cutlass_gemm.cu"],
+        ["csrc/ops.cu", "csrc/group_gemm.cu","csrc/cutlass_gemm.cu","csrc/fp8_blockwise_moe_kernel.cu"],
+        # ["csrc/ops.cu", "csrc/group_gemm.cu","csrc/cutlass_gemm.cu","csrc/gemm.cu"],
         include_dirs = [
             f"{cwd}/third-party/cutlass/include/",
             f"{cwd}/third-party/cutlass/tools/util/include/"

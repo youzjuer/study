@@ -449,8 +449,6 @@ GemmArguments MakeArguments(const std::vector<torch::Tensor>& a,
     // fusion_args.beta = 0;
     fusion_args.alpha_ptr = nullptr;
     fusion_args.beta_ptr = nullptr;
-    fusion_args.alpha_ptr_array = nullptr;
-    fusion_args.beta_ptr_array = nullptr;
     // Single alpha and beta for all groups
     fusion_args.dAlpha = {cute::_0{}, cute::_0{}, 0};
     fusion_args.dBeta = {cute::_0{}, cute::_0{}, 0};

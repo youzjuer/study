@@ -1,6 +1,7 @@
 import torch
 import math
 import argparse
+import triton 
 
 import omo as cutlass_gemm
 from torch.utils.benchmark import Timer
@@ -33,8 +34,9 @@ def benchmark(stmt, glob, desc):
   print("IQR: {{:.{}g}} us".format(m.significant_figures).format(m.iqr*pow(10,6)))
 
 cuda = torch.device('cuda')
-A = torch.normal(0,1,size=(args.M, args.K)).to(device=cuda).to(dtype=torch.float16)/math.sqrt(args.K)
-B = torch.normal(0,1,size=(args.K, args.N)).to(device=cuda).to(dtype=torch.float16)/math.sqrt(args.K)
+A = torch.normal(0,1,size=(args.M, args.K)).to(device=cuda).to(dtype=torch.float)/math.sqrt(args.K)
+# B = torch.normal(0,1,size=(args.K, args.N)).to(device=cuda).to(dtype=torch.float)/math.sqrt(args.K)
+B = torch.normal(0,1,size=(args.N, args.K)).to(device=cuda).to(dtype=torch.float)/math.sqrt(args.K)
 
 C1 = cutlass_gemm.mm(A,B)
 print("cutlass_gemm.mm result:")
@@ -43,6 +45,14 @@ print()
 print("Matrix size: A: {} x {}, B: {} x {}".format(args.M, args.K, args.K, args.N))
 print()
 benchmark("cutlass_gemm.mm(A, B)", locals(), "CUTLASS GEMM:")
+quantiles = [0.5, 0.2, 0.8]
+t_ms, _, _ = triton.testing.do_bench(lambda:cutlass_gemm.mm(A,B), quantiles=quantiles)
+t = t_ms / 1000.0 
+ops = 4 * args.M * args.N * args.K  
+print(f' > Performance ({t * 1e6:4.0f} us | '
+    f'throughput: {ops / t_ms / 1e9:4.0f} TFLOPS, ')
+
+
 
 C2 = torch.mm(A,B)
 print("torch.mm result:")
@@ -50,4 +60,7 @@ print(C2)
 print()
 print("max deviation: {:.10f}".format(torch.max(torch.abs(C2-C1))))
 benchmark("torch.mm(A, B)", locals(), "torch GEMM:")
-
+t_ms_torch, _, _ = triton.testing.do_bench(lambda:torch.mm(A,B), quantiles=quantiles)
+t_torch = t_ms_torch / 1000.0 
+print(f' > Performance ({t_torch * 1e6:4.0f} us | '
+    f'throughput: {ops / t_ms_torch / 1e9:4.0f} TFLOPS, ')
