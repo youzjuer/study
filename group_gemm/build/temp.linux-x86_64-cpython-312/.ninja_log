@@ -1,5 +1,0 @@
-# ninja log v5
-257	56007	1750410505345574417	/mnt/workspace/ycb/git_test/bbyDemo/group_gemm/build/temp.linux-x86_64-cpython-312/csrc/ops.o	fddd178c1f1874b8
-256	99288	1750410548611964041	/mnt/workspace/ycb/git_test/bbyDemo/group_gemm/build/temp.linux-x86_64-cpython-312/csrc/group_gemm.o	923aa7e0d5ff0e1d
-309	56371	1750411106350502733	/mnt/workspace/ycb/git_test/bbyDemo/group_gemm/build/temp.linux-x86_64-cpython-312/csrc/ops.o	8528b069420b2b9f
-308	99355	1750411149314201245	/mnt/workspace/ycb/git_test/bbyDemo/group_gemm/build/temp.linux-x86_64-cpython-312/csrc/group_gemm.o	a5dc154404a64db8

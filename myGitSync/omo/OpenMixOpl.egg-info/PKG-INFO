@@ -1,0 +1,17 @@
+Metadata-Version: 2.2
+Name: OpenMixOpl
+Version: 1.0.0
+Summary: Open Mix Operator Library@zhejianglab
+Author: youchunbo
+Author-email: youchunbo@zhejianglab.org
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: Unix
+Requires-Dist: absl-py
+Requires-Dist: numpy
+Requires-Dist: torch
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: requires-dist
+Dynamic: summary

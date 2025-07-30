@@ -1,0 +1,4 @@
+# ninja log v5
+2	79952	1752721659497071803	/mnt/workspace/ycb/git_test/bbyDemo/OpenMixOpl/individual/cutlass_gemm/cutlass_gemm/build/temp.linux-x86_64-cpython-312/cutlass_gemm.o	3c8ff22e1fcca99c
+188	79440	1752723006864367618	/mnt/workspace/ycb/git_test/bbyDemo/OpenMixOpl/individual/cutlass_gemm/cutlass_gemm/build/temp.linux-x86_64-cpython-312/cutlass_gemm.o	3c8ff22e1fcca99c
+287	81431	1752732651654477061	/mnt/workspace/ycb/git_test/bbyDemo/OpenMixOpl/individual/cutlass_gemm/cutlass_gemm/build/temp.linux-x86_64-cpython-312/cutlass_gemm.o	3c8ff22e1fcca99c
