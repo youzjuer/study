@@ -7,7 +7,7 @@ import deep_gemm
 import torch
 from omo import fp8_blockwise_scaled_grouped_mm
 
-from sgl_kernel import common_ops
+# from sgl_kernel import common_ops
 def get_m_alignment_for_contiguous_layout():
     return 128
 

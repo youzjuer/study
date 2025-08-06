@@ -538,6 +538,7 @@ void sm90_fp8_blockwise_group_mm_dispatch_shape(
  *       will internally transpose input matrices to align with the optimal memory access
  *       pattern for better GPU efficiency. This transformation is done within the kernel.
  */
+namespace omo{
 void fp8_blockwise_scaled_grouped_mm(
     torch::Tensor& output,
     torch::Tensor& a_ptrs,
@@ -597,55 +598,6 @@ void fp8_blockwise_scaled_grouped_mm(
   bool can_implement = false;
   auto sm_version = getSMVersion();
 
-#if defined(CUTLASS_ARCH_MMA_SM100A_SUPPORTED) || defined(CUTLASS_ARCH_MMA_SM100_SUPPORTED)
-#if defined CUDA_VERSION && CUDA_VERSION >= 12080
-  if (sm_version == 100) {
-    if (output.scalar_type() == torch::kBFloat16) {
-      sm100_fp8_blockwise_group_mm_dispatch_shape<cutlass::bfloat16_t>(
-          output,
-          a_ptrs,
-          b_ptrs,
-          out_ptrs,
-          a_scales_ptrs,
-          b_scales_ptrs,
-          a,
-          b,
-          scales_a,
-          scales_b,
-          stride_a,
-          stride_b,
-          stride_c,
-          layout_sfa,
-          layout_sfb,
-          problem_sizes,
-          expert_offsets,
-          workspace);
-    } else {
-      sm100_fp8_blockwise_group_mm_dispatch_shape<cutlass::half_t>(
-          output,
-          a_ptrs,
-          b_ptrs,
-          out_ptrs,
-          a_scales_ptrs,
-          b_scales_ptrs,
-          a,
-          b,
-          scales_a,
-          scales_b,
-          stride_a,
-          stride_b,
-          stride_c,
-          layout_sfa,
-          layout_sfb,
-          problem_sizes,
-          expert_offsets,
-          workspace);
-    }
-    can_implement = true;
-  }
-#endif
-#endif
-
 #if defined(CUTLASS_ARCH_MMA_SM90_SUPPORTED) && defined(CUTLASS_ARCH_MMA_MODIFIABLE_TMA_SM90_SUPPORTED)
   if (sm_version == 90 && a.size(1) > 256) {
     if (output.scalar_type() == torch::kBFloat16) {
@@ -699,12 +651,12 @@ void fp8_blockwise_scaled_grouped_mm(
       a.size(1));
 }
 
-
-PYBIND11_MODULE(TORCH_EXTENSION_NAME, m) {
-  m.def("moe_gemm", py::overload_cast<torch::Tensor&,torch::Tensor&,torch::Tensor&,torch::Tensor&,torch::Tensor&,torch::Tensor&,torch::Tensor&,torch::Tensor&,
-   torch::Tensor&,torch::Tensor&,torch::Tensor&,torch::Tensor&,torch::Tensor&,torch::Tensor&,torch::Tensor&,torch::Tensor&,torch::Tensor&,torch::Tensor&>(&fp8_blockwise_scaled_grouped_mm), 
-  py::arg("out"), py::arg("a_ptrs"), py::arg("b_ptrs"), py::arg("out_ptrs"), 
-  py::arg("a_scales_ptrs"), py::arg("b_scales_ptrs"), py::arg("a"), py::arg("b"), py::arg("scales_a"), py::arg("scales_b"), 
-  py::arg("stride_a"), py::arg("stride_b"),py::arg("stride_c"), py::arg("layout_sfa"), py::arg("layout_sfb"), py::arg("problem_sizes"), 
-  py::arg("expert_offsets"), py::arg("workspace"));
 }
+// PYBIND11_MODULE(TORCH_EXTENSION_NAME, m) {
+//   m.def("moe_gemm", py::overload_cast<torch::Tensor&,torch::Tensor&,torch::Tensor&,torch::Tensor&,torch::Tensor&,torch::Tensor&,torch::Tensor&,torch::Tensor&,
+//    torch::Tensor&,torch::Tensor&,torch::Tensor&,torch::Tensor&,torch::Tensor&,torch::Tensor&,torch::Tensor&,torch::Tensor&,torch::Tensor&,torch::Tensor&>(&fp8_blockwise_scaled_grouped_mm), 
+//   py::arg("out"), py::arg("a_ptrs"), py::arg("b_ptrs"), py::arg("out_ptrs"), 
+//   py::arg("a_scales_ptrs"), py::arg("b_scales_ptrs"), py::arg("a"), py::arg("b"), py::arg("scales_a"), py::arg("scales_b"), 
+//   py::arg("stride_a"), py::arg("stride_b"),py::arg("stride_c"), py::arg("layout_sfa"), py::arg("layout_sfb"), py::arg("problem_sizes"), 
+//   py::arg("expert_offsets"), py::arg("workspace"));
+// }

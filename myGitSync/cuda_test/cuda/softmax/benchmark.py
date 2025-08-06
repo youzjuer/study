@@ -34,8 +34,8 @@ if __name__ == "__main__":
         #     t_ms, _, _ = triton.testing.do_bench(lambda:cuda.softmax_cuda(x), quantiles=quantiles)
         #     assert torch.allclose(y, y3, atol=1e-8, rtol=1e-8), (y, y3)
         # variant = 2
-        for variant in range(1, 7):
-            variant = 7 
+        for variant in range(8, 11):
+            # variant = 7 
             cuda = load(name='softmax_cuda', sources=["interface.cpp", "softmax_kernel.cu"], verbose=True, extra_cuda_cflags=[f"-lineinfo", "--use_fast_math", "-O3", f"-DSOFTMAX_VARIANT={variant}", f"-DBLOCK_DIM_Y={dim_y}", f"-DUNROLL_FACTOR={unroll}", f"-DWIDTH={2**pow}"], extra_cflags=[f"-DSOFTMAX_VARIANT={variant}", f"-DBLOCK_DIM_Y={dim_y}", f"-DUNROLL_FACTOR={unroll}", f"-DWIDTH={2**pow}"])
             y3 = cuda.softmax_cuda(x)
             quantiles = [0.5, 0.2, 0.8]

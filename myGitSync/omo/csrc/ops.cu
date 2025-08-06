@@ -1,5 +1,6 @@
 #include "group_gemm.h"
 #include "fp32_gemm.h"
+#include "fp8_blockwise_gemm.h"
 #include "fp8_blockwise_moe.h"
 // #include "gemm.h"
 
@@ -26,7 +27,8 @@ PYBIND11_MODULE(TORCH_EXTENSION_NAME, m) {
     py::arg("A"), 
     py::arg("B"), 
     py::arg("out") = py::none());
-  // m.def("fp8_blockwise_scaled_grouped_mm",&fp8_blockwise_scaled_grouped_mm,"fp8_blockwise_scaled_grouped_mm");
+  m.def("fp8_blockwise_scaled_grouped_mm",&fp8_blockwise_scaled_grouped_mm,"fp8_blockwise_scaled_grouped_mm");
+  m.def("fp8_blockwise_scaled_mm",&fp8_blockwise_scaled_mm,"fp8_blockwise_scaled_mm");
 };
 
 // TORCH_LIBRARY_FRAGMENT(sgl_kernel, m) {
